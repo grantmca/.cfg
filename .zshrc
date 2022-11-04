@@ -36,6 +36,9 @@ zsh_add_file "zsh-history"
 zsh_add_plugin "zsh-users/zsh-autosuggestions"
 zsh_add_plugin "zsh-users/zsh-syntax-highlighting"
 zsh_add_plugin "hlissner/zsh-autopair"
+zsh_add_completion "felixr/docker-zsh-completion"
+#Intro
+zsh_add_file "zsh-intro"
 
 #Enviroment variables set everywhere
 export EDITOR="nvim"
