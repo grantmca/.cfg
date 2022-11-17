@@ -1,10 +1,7 @@
-local opts = { noremap = true, silent = true }
-
-local term_opts = { silent = true }
+local opts = { noremap = true, silent = false }
 
 -- Shorten function name
 local keymap = vim.api.nvim_set_keymap
-
 --Remap space as leader key
 keymap("", "<Space>", "<Nop>", opts)
 vim.g.mapleader = " "
@@ -19,33 +16,40 @@ vim.g.maplocalleader = " "
 --   command_mode = "c",
 
 -- Normal --
--- Better window navigation
-keymap("n", "<C-h>", "<C-w>h", opts)
-keymap("n", "<C-j>", "<C-w>j", opts)
-keymap("n", "<C-k>", "<C-w>k", opts)
-keymap("n", "<C-l>", "<C-w>l", opts) -- Not currently working
-keymap("n", "<C-S-D>", "<C-w>s", opts)
-keymap("n", "<C-D>", "<C-w>v", opts)
+-- handle splits
+keymap("n","<leader>sv", "<C-w>v", opts)
+keymap("n","<leader>sh", "<C-w>h", opts)
+keymap("n","<leader>se", "<C-w>=", opts)
+keymap("n","<leader>sc", ":close<CR>", opts)
+-- vim maximizer
+keymap("n","<leader>m", ":MaximizerToggle<CR>", opts)
+-- handle highlighs
+keymap("n", "<leader>h", ":nohl<CR>", opts) 
 
-keymap("n", "<leader>e", ":Lex 30<cr>", opts)
+-- increment easieose
+keymap("n", "<leader>=", "<C-a>", opts) -- incrememnt numbers up
+keymap("n", "<leader>-", "<C-x>", opts) -- incrememnt numbers down
 
--- Resize with arrows
-keymap("n", "<option-h>", ":resize -2<CR>", opts)
-keymap("n", "<option-j>", ":resize +2<CR>", opts)
-keymap("n", "<option-k>", ":vertical resize -2<CR>", opts)
-keymap("n", "<option-l>", ":vertical resize +2<CR>", opts)
+-- delete single character without copying into register
+keymap("n", "x", '"_x', opts)
 
 -- Navigate buffers
 keymap("n", "<S-l>", ":bnext<CR>", opts)
 keymap("n", "<S-h>", ":bprevious<CR>", opts)
+keymap("n", "<leader>c", ":Bdelete<CR>", opts)
 
--- Move text up and down
-keymap("n", "<option-j>", "<Esc>:m .+1<CR>==gi", opts)
-keymap("n", "<option-k>", "<Esc>:m .-2<CR>==gi", opts)
+-- File Navigation
+-- Telescope
+keymap("n", "<leader>f", "<cmd>Telescope find_files<cr>", opts)
+keymap("n", "<leader>st", "<cmd>Telescope live_grep<cr>", opts)
+keymap("n", "<leader>sw", "<cmd>Telescope grep_string<cr>", opts)
+keymap("n", "<leader>sh", "<cmd>Telescope help_tags<cr>", opts)
+-- NvimTree
+keymap("n", "<leader>e", ":NvimTreeToggle<cr>", opts)
 
 -- Insert --
 -- Press jk fast to exit insert mode 
--- keymap("i", "jk", "<ESC>", opts)
+keymap("i", "jk", "<ESC>", opts)
 
 -- Visual --
 -- Stay in indent mode
@@ -53,30 +57,18 @@ keymap("v", "<", "<gv", opts)
 keymap("v", ">", ">gv", opts)
 
 -- Move text up and down
-keymap("v", "<option-j>", ":m .+1<CR>==", opts)
-keymap("v", "<option-k>", ":m .-2<CR>==", opts)
+keymap("v", "J", ":m .+1<CR>==", opts)
+keymap("v", "K", ":m .-2<CR>==", opts)
 
 -- Visual Block --
 -- Move text up and down
 keymap("x", "J", ":move '>+1<CR>gv-gv", opts)
 keymap("x", "K", ":move '<-2<CR>gv-gv", opts)
-keymap("x", "<option-j>", ":move '>+1<CR>gv-gv", opts)
-keymap("x", "<option-k>", ":move '<-2<CR>gv-gv", opts)
 
--- Terminal --
--- Better terminal navigation
--- keymap("t", "<C-h>", "<C-\\><C-N><C-w>h", term_opts)
--- keymap("t", "<C-j>", "<C-\\><C-N><C-w>j", term_opts)
--- keymap("t", "<C-k>", "<C-\\><C-N><C-w>k", term_opts)
--- keymap("t", "<C-l>", "<C-\\><C-N><C-w>l", term_opts)
--- Terminal --
--- Better terminal navigation
-keymap("t", "<C-h>", "<C-\\><C-N><C-w>h", term_opts)
-keymap("t", "<C-j>", "<C-\\><C-N><C-w>j", term_opts)
-keymap("t", "<C-k>", "<C-\\><C-N><C-w>k", term_opts)
-keymap("t", "<C-l>", "<C-\\><C-N><C-w>l", term_opts)
+-- Command --
+-- Menu navigation
 
--- keymap("n", "<leader>f", "<cmd>Telescope find_files<cr>", opts)
-keymap("n", "<leader>f", "<cmd>Telescope find_files<cr>", opts)
-keymap("n", "<leader>st", "<cmd>Telescope live_grep<cr>", opts)
-keymap("n", "<leader>e", ":NvimTreeToggle<cr>", opts)
+
+
+
+

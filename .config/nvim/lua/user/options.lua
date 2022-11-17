@@ -17,13 +17,14 @@ local options = {
   splitright = true, -- force all vertical splits to go to the right of current window
   swapfile = false, -- creates a swapfile
   termguicolors = true,                    -- set term gui colors (most terminals support this)
-  timeoutlen = 500, -- time to wait for a mapped sequence to complete (in milliseconds)
+  timeoutlen = 900, -- time to wait for a mapped sequence to complete (in milliseconds)
   undofile = true, -- enable persistent undo
   updatetime = 200, -- faster completion (4000ms default)
   writebackup = false, -- if a file is being edited by another program (or was written to file while editing with another program), it is not allowed to be edited
   expandtab = true, -- convert tabs to spaces
   shiftwidth = 2, -- set number of spaces used for auto indent
   tabstop = 2, -- insert 2 spaces for a tab
+  autoindent = true,
   cursorline = false, -- highlight the current line
   number = true, -- set numbered lines
   relativenumber = true, -- set relative numbered lines
@@ -38,3 +39,4 @@ local options = {
 for k, v in pairs(options) do
   vim.opt[k] = v
 end
+vim.opt.iskeyword:append("-")

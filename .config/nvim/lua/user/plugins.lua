@@ -53,6 +53,10 @@ return packer.startup(function(use)
   use "nvim-tree/nvim-web-devicons"
   use "akinsho/bufferline.nvim"
   use "moll/vim-bbye"
+  use "christoomey/vim-tmux-navigator" -- tmux & split window navigation
+  use "szw/vim-maximizer" -- max vim split handler
+  use "tpope/vim-surround" -- surround different words with parenthesis
+  use "nvim-lualine/lualine.nvim"
 
   -- cmp plugins
   use "hrsh7th/nvim-cmp" -- The nvim completion plugin
@@ -71,6 +75,7 @@ return packer.startup(function(use)
   use "williamboman/mason.nvim" -- simple to use lanangue server installer
   use "williamboman/mason-lspconfig.nvim" -- simple to use language server installer
   use "jose-elias-alvarez/null-ls.nvim" -- For formatting and Linters
+  use "jayp0521/mason-null-ls.nvim" -- For formatting and Linters
 
   -- Telescope
   use "nvim-telescope/telescope.nvim"
