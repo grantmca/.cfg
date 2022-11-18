@@ -16,16 +16,6 @@ vim.g.maplocalleader = " "
 --   command_mode = "c",
 
 -- Normal --
--- handle splits
-keymap("n","<leader>sv", "<C-w>v", opts)
-keymap("n","<leader>sh", "<C-w>h", opts)
-keymap("n","<leader>se", "<C-w>=", opts)
-keymap("n","<leader>sc", ":close<CR>", opts)
--- vim maximizer
-keymap("n","<leader>m", ":MaximizerToggle<CR>", opts)
--- handle highlighs
-keymap("n", "<leader>h", ":nohl<CR>", opts) 
-
 -- increment easieose
 keymap("n", "<leader>=", "<C-a>", opts) -- incrememnt numbers up
 keymap("n", "<leader>-", "<C-x>", opts) -- incrememnt numbers down
@@ -39,11 +29,6 @@ keymap("n", "<S-h>", ":bprevious<CR>", opts)
 keymap("n", "<leader>c", ":Bdelete<CR>", opts)
 
 -- File Navigation
--- Telescope
-keymap("n", "<leader>f", "<cmd>Telescope find_files<cr>", opts)
-keymap("n", "<leader>st", "<cmd>Telescope live_grep<cr>", opts)
-keymap("n", "<leader>sw", "<cmd>Telescope grep_string<cr>", opts)
-keymap("n", "<leader>sh", "<cmd>Telescope help_tags<cr>", opts)
 -- NvimTree
 keymap("n", "<leader>e", ":NvimTreeToggle<cr>", opts)
 

@@ -57,6 +57,7 @@ return packer.startup(function(use)
   use "szw/vim-maximizer" -- max vim split handler
   use "tpope/vim-surround" -- surround different words with parenthesis
   use "nvim-lualine/lualine.nvim"
+  use "folke/which-key.nvim" -- for which which-key to show shortcuts
 
   -- cmp plugins
   use "hrsh7th/nvim-cmp" -- The nvim completion plugin
