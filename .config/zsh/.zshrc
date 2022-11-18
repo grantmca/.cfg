@@ -1,1 +1,0 @@
-/Users/grantmcallister/.zshrc
