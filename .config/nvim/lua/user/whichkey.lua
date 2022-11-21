@@ -72,7 +72,7 @@ local mappings = {
   ["m"] = { ":MaximizerToggle<CR>", "Max Toggle" },
   ["w"] = { "<cmd>w!<CR>", "Save" },
   ["/"] = { "<Plug>(comment_toggle_linewise_current)", "Comment toggle current line" },
-  ["c"] = { "<cmd>BufferKill<CR>", "Close Buffer" },
+  ["c"] = { "<cmd>Bdelete<CR>", "Close Buffer" },
   ["f"] = { "<cmd>lua require('telescope.builtin').find_files()<cr>", "Find File" },
   ["h"] = { "<cmd>nohlsearch<CR>", "No Highlight" },
   b = {
@@ -180,7 +180,7 @@ local mappings = {
     c = { "<cmd>Telescope colorscheme<cr>", "Colorscheme" },
     f = { "<cmd>Telescope find_files<cr>", "Find File" },
     h = { "<cmd>Telescope help_tags<cr>", "Find Help" },
-
+    w = { "<cmd>Telescope grep_string<cr>", "Find Help" },
     M = { "<cmd>Telescope man_pages<cr>", "Man Pages" },
     r = { "<cmd>Telescope oldfiles<cr>", "Open Recent File" },
     R = { "<cmd>Telescope registers<cr>", "Registers" },
