@@ -1,3 +1,5 @@
+require "user.impatient"
+require "user.alpha"
 require "user.options"
 require "user.autopairs"
 require "user.keymaps"

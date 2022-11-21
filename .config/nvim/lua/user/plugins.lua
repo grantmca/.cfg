@@ -58,6 +58,9 @@ return packer.startup(function(use)
   use "tpope/vim-surround" -- surround different words with parenthesis
   use "nvim-lualine/lualine.nvim"
   use "folke/which-key.nvim" -- for which which-key to show shortcuts
+  use "lewis6991/impatient.nvim" -- Speeds up startup by caching the stetup
+  use "dstein64/vim-startuptime" -- Used to help trackt the startup time of vim
+  use "goolord/alpha-nvim" -- for the start screen
 
   -- cmp plugins
   use "hrsh7th/nvim-cmp" -- The nvim completion plugin

@@ -24,8 +24,8 @@ keymap("n", "<leader>-", "<C-x>", opts) -- incrememnt numbers down
 keymap("n", "x", '"_x', opts)
 
 -- Navigate buffers
-keymap("n", "<S-l>", ":bnext<CR>", opts)
-keymap("n", "<S-h>", ":bprevious<CR>", opts)
+keymap("n", "<S-l>", "<cmd>BufferLineCycleNext<cr>", opts)
+keymap("n", "<S-h>", "<cmd>BufferLineCyclePrev<cr>", opts)
 keymap("n", "<leader>c", ":Bdelete<CR>", opts)
 
 -- File Navigation
