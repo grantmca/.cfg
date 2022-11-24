@@ -61,6 +61,7 @@ return packer.startup(function(use)
   use "lewis6991/impatient.nvim" -- Speeds up startup by caching the stetup
   use "dstein64/vim-startuptime" -- Used to help trackt the startup time of vim
   use "goolord/alpha-nvim" -- for the start screen
+  use "sindrets/diffview.nvim" -- for the start screen
 
   -- cmp plugins
   use "hrsh7th/nvim-cmp" -- The nvim completion plugin
