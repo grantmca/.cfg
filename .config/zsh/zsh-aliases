@@ -14,4 +14,4 @@ alias fgrep='fgrep --color=auto'
 # Color the list funcition
 alias ls='ls -G'
 
-
+alias spt-reset="brew services restart spotifyd"

@@ -1,5 +1,6 @@
 local lspservers = {
   "sumneko_lua",
+  "solargraph",
   -- "cssls",
   -- "html",
   -- "tsserver",
