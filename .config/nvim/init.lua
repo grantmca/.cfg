@@ -13,4 +13,4 @@ require "user.nvim-tree"
 require "user.bufferline"
 require "user.lualine"
 require "user.whichkey"
-
+require "user.project"

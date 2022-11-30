@@ -62,6 +62,7 @@ return packer.startup(function(use)
   use "dstein64/vim-startuptime" -- Used to help trackt the startup time of vim
   use "goolord/alpha-nvim" -- for the start screen
   use "sindrets/diffview.nvim" -- for the start screen
+  use "ahmedkhalf/project.nvim" -- for tracking projects
 
   -- cmp plugins
   use "hrsh7th/nvim-cmp" -- The nvim completion plugin
