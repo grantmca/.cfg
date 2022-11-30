@@ -77,11 +77,11 @@ return packer.startup(function(use)
   use "rafamadriz/friendly-snippets"
 
   --LSP
-  use "neovim/nvim-lspconfig" -- enable lsp
   use "williamboman/mason.nvim" -- simple to use lanangue server installer
   use "williamboman/mason-lspconfig.nvim" -- simple to use language server installer
-  use "jose-elias-alvarez/null-ls.nvim" -- For formatting and Linters
   use "jayp0521/mason-null-ls.nvim" -- For formatting and Linters
+  use "jose-elias-alvarez/null-ls.nvim" -- For formatting and Linters
+  use "neovim/nvim-lspconfig" -- enable lsp
 
   -- Telescope
   use "nvim-telescope/telescope.nvim"
