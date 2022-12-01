@@ -1,9 +1,10 @@
 local servers = {
 	"sumneko_lua",
   "solargraph",
+  "cucumber_language_server",
 	-- "cssls",
 	-- "html",
-	-- "tsserver",
+	"tsserver",
 	"pyright",
 	-- "bashls",
 	"jsonls",

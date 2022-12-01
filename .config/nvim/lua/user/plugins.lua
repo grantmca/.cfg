@@ -48,6 +48,8 @@ return packer.startup(function(use)
   use "nvim-lua/plenary.nvim" --Useful Lua Funcitons used in a lot of plugins
   use "windwp/nvim-autopairs" -- Autopairs, integrates with both cmp and treesitter
   use "LunarVim/onedarker.nvim" --Helpful for loading color Schemes DarkOner
+  use "LunarVim/horizon.nvim" --Helpful for loading color Schemes DarkOner
+  use "LunarVim/darkplus.nvim" --Helpful for loading color Schemes DarkOner
   use "numToStr/Comment.nvim" -- Easily comment stuff
   use "nvim-tree/nvim-tree.lua"
   use "nvim-tree/nvim-web-devicons"
