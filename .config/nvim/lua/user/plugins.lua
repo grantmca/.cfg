@@ -106,8 +106,6 @@ return packer.startup(function(use)
     end,
     requires = {
       "MunifTanjim/nui.nvim",
-      "nvim-lua/plenary.nvim",
-      "nvim-telescope/telescope.nvim"
     }
   })
 
