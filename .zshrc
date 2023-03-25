@@ -27,8 +27,10 @@ source "$ZDOTDIR/zsh-functions"
 
 # Add Files For Organization
 zsh_add_file "zsh-aliases"
+zsh_add_file "zsh-work-aliases"
 zsh_add_file "zsh-prompt"
 zsh_add_file "zsh-exports"
+zsh_add_file "zsh-work-exports"
 zsh_add_file "zsh-vim-mode"
 zsh_add_file "zsh-history"
 

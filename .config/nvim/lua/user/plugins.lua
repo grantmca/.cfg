@@ -6,8 +6,7 @@ local install_path = fn.stdpath("data") .. "/site/pack/packer/start/packer.nvim"
 if fn.empty(fn.glob(install_path)) > 0 then
 	PACKER_BOOTSTRAP = fn.system({
 		"git",
-		"clone",
-		"--depth",
+		"clone", "--depth",
 		"1",
 		"https://github.com/wbthomason/packer.nvim",
 		install_path,
@@ -48,6 +47,7 @@ return packer.startup(function(use)
   use "nvim-lua/plenary.nvim" --Useful Lua Funcitons used in a lot of plugins
   use "windwp/nvim-autopairs" -- Autopairs, integrates with both cmp and treesitter
   use "LunarVim/onedarker.nvim" --Helpful for loading color Schemes DarkOner
+  use "catppuccin/nvim"
   use "LunarVim/horizon.nvim" --Helpful for loading color Schemes DarkOner
   use "LunarVim/darkplus.nvim" --Helpful for loading color Schemes DarkOner
   use "numToStr/Comment.nvim" -- Easily comment stuff
@@ -63,8 +63,14 @@ return packer.startup(function(use)
   use "lewis6991/impatient.nvim" -- Speeds up startup by caching the stetup
   use "dstein64/vim-startuptime" -- Used to help trackt the startup time of vim
   use "goolord/alpha-nvim" -- for the start screen
-  use "sindrets/diffview.nvim" -- for the start screen
-  use "ahmedkhalf/project.nvim" -- for tracking projects
+  use "sindrets/diffview.nvim" -- for file history
+
+  --LSP
+  use "neovim/nvim-lspconfig" -- enable lsp
+  use "williamboman/mason.nvim" -- simple to use lanangue server installer
+  use "williamboman/mason-lspconfig.nvim" -- simple to use language server installer
+  use "jose-elias-alvarez/null-ls.nvim" -- For formatting and Linters
+  use "jayp0521/mason-null-ls.nvim" -- For formatting and Linters
 
   -- cmp plugins
   use "hrsh7th/nvim-cmp" -- The nvim completion plugin
@@ -78,13 +84,6 @@ return packer.startup(function(use)
   use "L3MON4D3/LuaSnip"
   use "rafamadriz/friendly-snippets"
 
-  --LSP
-  use "williamboman/mason.nvim" -- simple to use lanangue server installer
-  use "williamboman/mason-lspconfig.nvim" -- simple to use language server installer
-  use "jayp0521/mason-null-ls.nvim" -- For formatting and Linters
-  use "jose-elias-alvarez/null-ls.nvim" -- For formatting and Linters
-  use "neovim/nvim-lspconfig" -- enable lsp
-
   -- Telescope
   use "nvim-telescope/telescope.nvim"
   -- Treesitter
@@ -97,6 +96,25 @@ return packer.startup(function(use)
   -- Git
   use 'lewis6991/gitsigns.nvim'
 
+  -- VimWiki
+  use {
+    'vimwiki/vimwiki',
+    config = function()
+      vim.g.vimwiki_list = {
+        {
+          path = '~/',
+          syntax = 'markdown',
+          ext  = '.md',
+        }
+      }
+      vim.g.vimwiki_ext2syntax = {
+        ['.md'] = 'markdown',
+        ['.markdown'] = 'markdown',
+        ['.mdown'] = 'markdown',
+      }
+    end
+  }
+  use "mbbill/undotree"
   use({
     "jackMort/ChatGPT.nvim",
     config = function()
@@ -106,8 +124,6 @@ return packer.startup(function(use)
     end,
     requires = {
       "MunifTanjim/nui.nvim",
-      "nvim-lua/plenary.nvim",
-      "nvim-telescope/telescope.nvim"
     }
   })
 

@@ -1,5 +1,5 @@
 local servers = {
-	"sumneko_lua",
+	"lua_ls",
   "solargraph",
   "cucumber_language_server",
 	-- "cssls",
