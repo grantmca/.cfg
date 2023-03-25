@@ -1,12 +1,12 @@
 # change window focus within space
-alt - j : yabai -m window --focus prev 
-alt - k : yabai -m window --focus next
-alt - h : yabai -m display --focus prev
-alt - l : yabai -m display --focus next 
+alt - j : yabai -m window --focus south
+alt - k : yabai -m window --focus north
+alt - h : yabai -m window --focus west
+alt - l : yabai -m window --focus east
 
 #change focus between external displays (left and right)
-# alt - s: yabai -m display --focus west
-# alt - g: yabai -m display --focus east
+alt - s: zsh ~/.config/skhd/cycle_next.sh;
+alt - g: zsh ~/.config/skhd/cycle_prev.sh;
 
 # rotate layout clockwise
 shift + alt - r : yabai -m space --rotate 270
@@ -21,7 +21,7 @@ shift + alt - x : yabai -m space --mirror x-axis
 shift + alt - t : yabai -m window --toggle float --grid 4:4:1:1:2:2
 
 # maximize a window
-alt - m : yabai -m window --toggle zoom-fullscreen
+shift + alt - m : yabai -m window --toggle zoom-fullscreen
 
 # balance out tree of windows (resize to occupy same area)
 shift + alt - e : yabai -m space --balance
@@ -39,12 +39,12 @@ ctrl + alt - h : yabai -m window --warp west
 ctrl + alt - l : yabai -m window --warp east
 
 # move window to display left and right
-shift + alt - s : yabai -m window --display west; yabai -m display --focus west;
-shift + alt - g : yabai -m window --display east; yabai -m display --focus east;
+shift + alt - s : zsh ~/.config/skhd/cycle_disp_next.sh;
+shift + alt - g : zsh ~/.config/skhd/cycle_disp_prev.sh;
 
 #move window to prev and next space
-shift + alt - p : yabai -m window --space prev;
-shift + alt - n : yabai -m window --space next;
+shift + alt - p : yabai -m window --space prev; yabai -m display --focus prev;
+shift + alt - n : yabai -m window --space next; yabai -m display --focus next;
 
 # move window to space #
 shift + alt - 1 : yabai -m window --space 1;
