@@ -118,17 +118,6 @@ return packer.startup(function(use)
     end
   }
   use "mbbill/undotree"
-  use({
-    "jackMort/ChatGPT.nvim",
-    config = function()
-      require("chatgpt").setup({
-        -- optional configuration
-      })
-    end,
-    requires = {
-      "MunifTanjim/nui.nvim",
-    }
-  })
 
   if PACKER_BOOTSTRAP then
     require("packer").sync()
