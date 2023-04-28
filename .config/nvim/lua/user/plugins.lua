@@ -48,7 +48,9 @@ return packer.startup(function(use)
   use "windwp/nvim-autopairs" -- Autopairs, integrates with both cmp and treesitter
   use "LunarVim/onedarker.nvim" --Helpful for loading color Schemes DarkOner
   use "catppuccin/nvim"
-  use "LunarVim/horizon.nvim" --Helpful for loading color Schemes DarkOner
+  -- If you are using Packer
+  use 'shaunsingh/solarized.nvim'
+  use "LunarVim/horizon.nvim" --Helpful for loading color Schemes Horizon
   use "LunarVim/darkplus.nvim" --Helpful for loading color Schemes DarkOner
   use "numToStr/Comment.nvim" -- Easily comment stuff
   use "nvim-tree/nvim-tree.lua"
@@ -64,6 +66,7 @@ return packer.startup(function(use)
   use "dstein64/vim-startuptime" -- Used to help trackt the startup time of vim
   use "goolord/alpha-nvim" -- for the start screen
   use "sindrets/diffview.nvim" -- for file history
+  use "kg8m/vim-simple-align" -- for alignment 
 
   --LSP
   use "neovim/nvim-lspconfig" -- enable lsp

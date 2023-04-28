@@ -5,8 +5,8 @@ alt - h : yabai -m window --focus west
 alt - l : yabai -m window --focus east
 
 #change focus between external displays (left and right)
-alt - s: zsh ~/.config/skhd/cycle_next.sh;
-alt - g: zsh ~/.config/skhd/cycle_prev.sh;
+alt - g: zsh ~/.config/skhd/cycle_next.sh;
+alt - s: zsh ~/.config/skhd/cycle_prev.sh;
 
 # rotate layout clockwise
 shift + alt - r : yabai -m space --rotate 270
