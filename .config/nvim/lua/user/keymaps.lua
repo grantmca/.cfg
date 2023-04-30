@@ -15,7 +15,7 @@ vim.g.maplocalleader = " "
 --   command_mode = "c",
 
 -- Normal --
--- increment easieose
+-- increment  
 keymap("n", "<leader>=", "<C-a>", opts) -- incrememnt numbers up
 keymap("n", "<leader>-", "<C-x>", opts) -- incrememnt numbers down
 

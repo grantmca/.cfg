@@ -46,12 +46,9 @@ return packer.startup(function(use)
   use "nvim-lua/popup.nvim" -- An implementation of the Popup Aif from vim in neovim
   use "nvim-lua/plenary.nvim" --Useful Lua Funcitons used in a lot of plugins
   use "windwp/nvim-autopairs" -- Autopairs, integrates with both cmp and treesitter
-  use "LunarVim/onedarker.nvim" --Helpful for loading color Schemes DarkOner
   use "catppuccin/nvim"
+  use "LunarVim/tokyonight.nvim"
   -- If you are using Packer
-  use 'shaunsingh/solarized.nvim'
-  use "LunarVim/horizon.nvim" --Helpful for loading color Schemes Horizon
-  use "LunarVim/darkplus.nvim" --Helpful for loading color Schemes DarkOner
   use "numToStr/Comment.nvim" -- Easily comment stuff
   use "nvim-tree/nvim-tree.lua"
   use "nvim-tree/nvim-web-devicons"
@@ -60,12 +57,12 @@ return packer.startup(function(use)
   use "christoomey/vim-tmux-navigator" -- tmux & split window navigation
   use "szw/vim-maximizer" -- max vim split handler
   use "tpope/vim-surround" -- surround different words with parenthesis
-  use "nvim-lualine/lualine.nvim"
+  use "nvim-lualine/lualine.nvim" -- line underneath the buffer
   use "folke/which-key.nvim" -- for which which-key to show shortcuts
   use "lewis6991/impatient.nvim" -- Speeds up startup by caching the stetup
   use "dstein64/vim-startuptime" -- Used to help trackt the startup time of vim
   use "goolord/alpha-nvim" -- for the start screen
-  use "sindrets/diffview.nvim" -- for file history
+  use "sindrets/diffview.nvim" -- for file history and diff views
   use "kg8m/vim-simple-align" -- for alignment 
 
   --LSP
@@ -86,6 +83,8 @@ return packer.startup(function(use)
   -- snippits to use
   use "L3MON4D3/LuaSnip"
   use "rafamadriz/friendly-snippets"
+  -- GitHub CoPilot
+  -- use "github/copilot.vim"
 
   -- Telescope
   use "nvim-telescope/telescope.nvim"
@@ -94,8 +93,8 @@ return packer.startup(function(use)
     "nvim-treesitter/nvim-treesitter",
     run = ":TSUpdate",
   }
-  -- use 'JoosepAlviste/nvim-ts-context-commentstring'
-
+  -- In case I need undo history
+  use "mbbill/undotree"
   -- Git
   use 'lewis6991/gitsigns.nvim'
 
@@ -117,7 +116,6 @@ return packer.startup(function(use)
       }
     end
   }
-  use "mbbill/undotree"
 
   if PACKER_BOOTSTRAP then
     require("packer").sync()
