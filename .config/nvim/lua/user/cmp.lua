@@ -79,6 +79,7 @@ cmp.setup {
       vim_item.kind = kind_icons[vim_item.kind]
       -- NOTE: order matters
       vim_item.menu = ({
+        copilot = "[Copilot]",
         nvim_lsp = "[LSP]",
         luasnip = "[Luasnip]",
         buffer = "[File]",
@@ -88,6 +89,7 @@ cmp.setup {
     end,
   },
   sources = {
+    { name = "copilot"},
     { name = "nvim_lsp"},
     { name = "luasnip"},
     {
