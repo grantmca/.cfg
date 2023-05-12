@@ -83,11 +83,34 @@ return packer.startup(function(use)
   -- snippits to use
   use "L3MON4D3/LuaSnip"
   use "rafamadriz/friendly-snippets"
-  -- GitHub CoPilot
-  -- use "github/copilot.vim"
 
+  -- GitHub CoPilot
+  use {
+    "zbirenbaum/copilot.lua",
+    cmd = "Copilot",
+    event = "InsertEnter",
+    config = function()
+      require("copilot").setup({
+        suggestion = { enabled = false },
+        panel = { enabled = false },
+      })
+    end,
+  }
+
+  use {
+    "zbirenbaum/copilot-cmp",
+    config = function ()
+      require("copilot_cmp").setup()
+    end
+  }
+
+  -- rails form Tpope
+  use {
+    "tpope/vim-rails",
+  }
   -- Telescope
   use "nvim-telescope/telescope.nvim"
+
   -- Treesitter
   use {
     "nvim-treesitter/nvim-treesitter",
