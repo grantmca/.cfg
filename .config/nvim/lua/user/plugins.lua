@@ -48,7 +48,7 @@ return packer.startup(function(use)
   use "windwp/nvim-autopairs" -- Autopairs, integrates with both cmp and treesitter
   use "catppuccin/nvim"
   use "LunarVim/tokyonight.nvim"
-  -- If you are using Packer
+  use "lukas-reineke/indent-blankline.nvim" -- for indent lines
   use "numToStr/Comment.nvim" -- Easily comment stuff
   use "nvim-tree/nvim-tree.lua"
   use "nvim-tree/nvim-web-devicons"
