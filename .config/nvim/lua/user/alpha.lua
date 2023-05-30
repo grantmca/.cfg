@@ -1,73 +1,37 @@
-local status_ok, alpha = pcall(require, "alpha")
-if not status_ok then
-	return
-end
+return {
+  "goolord/alpha-nvim",
+  cmd = "Alpha",
+  opts = function()
+    local dashboard = require "alpha.themes.dashboard"
+    dashboard.section.header.val = {
+      " █████  ███████ ████████ ██████   ██████",
+      "██   ██ ██         ██    ██   ██ ██    ██",
+      "███████ ███████    ██    ██████  ██    ██",
+      "██   ██      ██    ██    ██   ██ ██    ██",
+      "██   ██ ███████    ██    ██   ██  ██████",
+      " ",
+      "    ███    ██ ██    ██ ██ ███    ███",
+      "    ████   ██ ██    ██ ██ ████  ████",
+      "    ██ ██  ██ ██    ██ ██ ██ ████ ██",
+      "    ██  ██ ██  ██  ██  ██ ██  ██  ██",
+      "    ██   ████   ████   ██ ██      ██",
+    }
+    dashboard.section.header.opts.hl = "DashboardHeader"
 
+    local button = require("astronvim.utils").alpha_button
+    dashboard.section.buttons.val = {
+      button("LDR n", "  New File  "),
+      button("LDR f f", "  Find File  "),
+      button("LDR f o", "  Recents  "),
+      button("LDR f w", "  Find Word  "),
+      button("LDR f '", "  Bookmarks  "),
+      button("LDR S l", "  Last Session  "),
+    }
 
-local dashboard = require("alpha.themes.dashboard")
-dashboard.section.header.val = {
-
-
-[[                   .                       ]],
-[[                  `:.                      ]],
-[[                    `:.                    ]],
-[[            .:'     ,::                    ]],
-[[           .:'      ;:'                    ]],
-[[           ::      ;:'                     ]],
-[[            :    .:'                       ]],
-[[             `.  :.                        ]],
-[[                                           ]],
-[[                                           ]],
-[[    ., '''''''''''''''''' ,.               ]],
-[[ .'   .oooooo$$$$$ooooooo.   '.            ]],
-[[::  ,$$$$$$$$$$$$$$$$$$$$$$,  ',           ]],
-[[|;  '$$$$$$$$$$$$$$$$$$$$$$'    ''''''''''.]],
-[[|;     ''''''$$$$$'''''''       ,:''''':, |]],
-[[|;   '|                   |'    ||      | |]],
-[[|;   '|                   |'    ||      | |]],
-[[|;   '|                   |'    ||      | |]],
-[[|;   '|                   |'    ||      | |]],
-[[|;   '|                   |'    ||      | |]],
-[[|;   '|                   |'    ||      | |]],
-[[|;   '|                   |'    ||      | |]],
-[[|;   '|                   |'    ||      | |]],
-[[|;   '|                   |'    ||      | |]],
-[[|;   '|                   |'    ':.....:' |]],
-[[|;   '|                   |'     ,,,,,,,,,']],
-[[|;   '|                   |'    ;          ]],
-[[|;.   |                   |   .'           ]],
-[[ '||,,,                   ,,,;'            ]],
-[[    ''';;;;,,,,,,,,,,,;;;;'''              ]],
-[[           '''''''''''                     ]],
-
+    dashboard.config.layout[1].val = vim.fn.max { 2, vim.fn.floor(vim.fn.winheight(0) * 0.2) }
+    dashboard.config.layout[3].val = 5
+    dashboard.config.opts.noautocmd = true
+    return dashboard
+  end,
+  config = require "user.alpha",
 }
-
-
-dashboard.section.buttons.val = {
-	dashboard.button("f", "  Find file", ":Telescope find_files <CR>"),
-	dashboard.button("e", "  New file", ":ene <BAR> startinsert <CR>"),
-	dashboard.button("p", "  Find project", ":Telescope projects <CR>"),
-	dashboard.button("r", " Recently used files", ":Telescope oldfiles <CR>"),
-	dashboard.button("t", "  Find text", ":Telescope live_grep <CR>"),
-	dashboard.button("c", "  Configuration", ":e ~/.config/nvim/init.lua <CR>"),
-	dashboard.button("q", "  Quit Neovim", ":qa<CR>"),
-}
-
-local function footer()
--- NOTE: requires the fortune-mod package to work
-	-- local handle = io.popen("fortune")
-	-- local fortune = handle:read("*a")
-	-- handle:close()
-	-- return fortune
-	return "Good Day"
-end
-
-dashboard.section.footer.val = footer()
-
-dashboard.section.footer.opts.hl = "Type"
-dashboard.section.header.opts.hl = "Include"
-dashboard.section.buttons.opts.hl = "Keyword"
-
-dashboard.opts.opts.noautocmd = true
--- vim.cmd([[autocmd User AlphaReady echo 'ready']])
-alpha.setup(dashboard.opts)
