@@ -121,24 +121,6 @@ return packer.startup(function(use)
   -- Git
   use 'lewis6991/gitsigns.nvim'
 
-  -- VimWiki
-  use {
-    'vimwiki/vimwiki',
-    config = function()
-      vim.g.vimwiki_list = {
-        {
-          path = '~/',
-          syntax = 'markdown',
-          ext  = '.md',
-        }
-      }
-      vim.g.vimwiki_ext2syntax = {
-        ['.md'] = 'markdown',
-        ['.markdown'] = 'markdown',
-        ['.mdown'] = 'markdown',
-      }
-    end
-  }
   use {
     "nvim-neorg/neorg",
     config = function()
