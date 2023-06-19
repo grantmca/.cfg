@@ -1,7 +1,7 @@
 #!/bin/sh
 export ZDOTDIR=$HOME/.config/zsh
 export HISTFILE=$HOME/.zsh_history
-
+ulimit -n 1024 # increased from 256
 # zsh options for more info use man zshoptions
 setopt appendhistory
 # completions
