@@ -20,23 +20,38 @@ local plugins = {
     opts = require("user.autopairs")
   },
   "catppuccin/nvim",
-  "LunarVim/tokyonight.nvim",
+  {
+    "folke/tokyonight.nvim",
+    lazy = false,
+    priority = 1000,
+    opts = {},
+  },
   "lukas-reineke/indent-blankline.nvim", -- for indent lines
   "numToStr/Comment.nvim", -- Easily comment stuff
   "nvim-tree/nvim-tree.lua",
-  "nvim-tree/nvim-web-devicons",
+  { "nvim-tree/nvim-web-devicons", lazy = true },
   "akinsho/bufferline.nvim",
   "moll/vim-bbye",
   "christoomey/vim-tmux-navigator", -- tmux & split window navigation
   "szw/vim-maximizer", -- max vim split handler
   "tpope/vim-surround", -- surround different words with parenthesis
   "nvim-lualine/lualine.nvim", -- line underneath the buffer
-  "folke/which-key.nvim", -- for which which-key to show shortcuts
+  { "folke/which-key.nvim",
+    lazy = true
+  }, -- for which which-key to show shortcuts
   "lewis6991/impatient.nvim", -- Speeds up startup by caching the stetup
-  "dstein64/vim-startuptime", -- Used to help trackt the startup time of vim
+  {
+    "dstein64/vim-startuptime",
+    -- lazy-load on a command
+    cmd = "StartupTime",
+    -- init is called during startup. Configuration for vim plugins typically should be set in an init function
+    init = function()
+      vim.g.startuptime_tries = 10
+    end,
+  }, -- Used to help trackt the startup time of vim
   {
     "goolord/alpha-nvim",
-    lazy = true,
+    lazy = false,
   },
   "sindrets/diffview.nvim", -- for file history and diff views
   "kg8m/vim-simple-align", -- for alignment 
@@ -59,9 +74,11 @@ local plugins = {
   -- snippits to use
   "L3MON4D3/LuaSnip",
   "rafamadriz/friendly-snippets",
-
+  "nvim-treesitter/nvim-treesitter",
   -- rails form Tpope
-  "tpope/vim-rails",
+  { "tpope/vim-rails",
+    ft = "ruby"
+  },
 
   -- Telescope
   "nvim-telescope/telescope.nvim",
@@ -91,26 +108,37 @@ local plugins = {
       require("copilot_cmp").setup()
     end
   },
-  -- {
-  --   "nvim-neorg/neorg",
-  --   build = ":Neorg sync-parsers",
-  --   dependencies = { "nvim-lua/plenary.nvim" },
-  --   config = function()
-  --     require("neorg").setup {
-  --       load = {
-  --         ["core.defaults"] = {}, -- Loads default behaviour
-  --         ["core.concealer"] = {}, -- Adds pretty icons to your documents
-  --         ["core.dirman"] = { -- Manages Neorg workspaces
-  --           config = {
-  --             workspaces = {
-  --               notes = "~/notes",
-  --             },
-  --           },
-  --         },
-  --       },
-  --     }
-  --   end,
-  -- },
+  {
+    "nvim-neorg/neorg",
+    cmd = "Neorg",
+    -- build = ":Neorg sync-parsers",
+      opts  = {
+        load = {
+          ["core.defaults"] = {}, -- Loads default behaviour
+          ["core.concealer"] = {}, -- Adds pretty icons to your documents
+          ["core.dirman"] = { -- Manages Neorg workspaces
+            config = {
+              default_workspace = "notes",
+              workspaces = {
+                notes = "~/notes",
+              },
+            },
+          },
+        },
+      }
+  },
+  {
+  "jackMort/ChatGPT.nvim",
+    event = "VeryLazy",
+    config = function()
+      require("chatgpt").setup()
+    end,
+    dependencies = {
+      "MunifTanjim/nui.nvim",
+      "nvim-lua/plenary.nvim",
+      "nvim-telescope/telescope.nvim"
+    }
+  }
 }
 
 local opts = {}
