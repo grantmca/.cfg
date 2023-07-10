@@ -75,6 +75,7 @@ local mappings = {
   ["c"] = { "<cmd>Bdelete<CR>", "Close Buffer" },
   ["f"] = { "<cmd>lua require('telescope.builtin').find_files()<cr>", "Find File" },
   ["h"] = { "<cmd>nohlsearch<CR>", "No Highlight" },
+  ["p"] = { "<cmd>Lazy<CR>", "Plugin Manager" }, -- Invoking plugin manager
   b = {
     name = "Buffers",
     f = { "<cmd>Telescope buffers<cr>", "Find" },
@@ -106,14 +107,6 @@ local mappings = {
   --   q = { "<cmd>lua require'dap'.close()<cr>", "Quit" },
   --   U = { "<cmd>lua require'dapui'.toggle()<cr>", "Toggle UI" },
   -- },
-  p = {
-    name = "Packer",
-    c = { "<cmd>PackerCompile<cr>", "Compile" },
-    i = { "<cmd>PackerInstall<cr>", "Install" },
-    s = { "<cmd>PackerSync<cr>", "Sync" },
-    S = { "<cmd>PackerStatus<cr>", "Status" },
-    u = { "<cmd>PackerUpdate<cr>", "Update" },
-  },
 
   -- " Available Debug Adapters:
   -- "   https://microsoft.github.io/debug-adapter-protocol/implementors/adapters/

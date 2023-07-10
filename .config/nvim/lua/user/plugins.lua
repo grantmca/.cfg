@@ -40,7 +40,6 @@ local plugins = {
     "folke/which-key.nvim",
     lazy = true
   }, -- for which which-key to show shortcuts
-  "lewis6991/impatient.nvim", -- Speeds up startup by caching the stetup
   {
     "dstein64/vim-startuptime",
     -- lazy-load on a command
@@ -50,10 +49,6 @@ local plugins = {
       vim.g.startuptime_tries = 10
     end,
   }, -- Used to help trackt the startup time of vim
-  {
-    "goolord/alpha-nvim",
-    lazy = false,
-  },
   "sindrets/diffview.nvim", -- for file history and diff views
   "kg8m/vim-simple-align", -- for alignment 
 

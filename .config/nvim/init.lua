@@ -1,5 +1,4 @@
 require "user.impatient"
-require "user.alpha"
 require "user.options"
 require "user.plugins"
 require "user.cmp_autopairs"
@@ -17,3 +16,4 @@ require "user.bufferline"
 require "user.lualine"
 require "user.whichkey"
 require "user.project"
+
