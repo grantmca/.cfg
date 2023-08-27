@@ -28,7 +28,10 @@ local plugins = {
   },
   "lukas-reineke/indent-blankline.nvim", -- for indent lines
   "numToStr/Comment.nvim", -- Easily comment stuff
-  "nvim-tree/nvim-tree.lua",
+  {
+    "nvim-tree/nvim-tree.lua",
+    opts = require("user.nvim-tree"),
+  },
   { "nvim-tree/nvim-web-devicons", lazy = true },
   "akinsho/bufferline.nvim",
   "moll/vim-bbye",
@@ -103,7 +106,9 @@ local plugins = {
       "zbirenbaum/copilot.lua",
     },
     config = function ()
-      require("copilot_cmp").setup()
+      require("copilot_cmp").setup({
+        fix_pairs = true,
+      })
     end
   },
   {
@@ -114,6 +119,7 @@ local plugins = {
       load = {
         ["core.defaults"] = {}, -- Loads default behaviour
         ["core.concealer"] = {}, -- Adds pretty icons to your documents
+        -- ["core.ui"] = {}, -- Adds pretty calendar
         ["core.dirman"] = { -- Manages Neorg workspaces
         config = {
           default_workspace = "notes",

@@ -25,6 +25,7 @@ cmp.setup {
       luasnip.lsp_expand(args.body) -- For `luasnip` users.
     end,
   },
+ 
   mapping = cmp.mapping.preset.insert {
     ["<C-k>"] = cmp.mapping(cmp.mapping.select_prev_item(), { "i", "c" }),
     ["<C-j>"] = cmp.mapping(cmp.mapping.select_next_item(), { "i", "c" }),
