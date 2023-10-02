@@ -1,31 +1,29 @@
-local opts = { noremap = true, silent = false }
 
 -- Shorten function name
 local keymap = vim.api.nvim_set_keymap --Remap space as leader key
-keymap("", "<Space>", "<Nop>", opts)
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 
--- Modes
---   normal_mode = "n",
---   insert_mode = "i",
---   visual_mode = "v",
---   visual_block_mode = "x",
---   term_mode = "t",
---   command_mode = "c",
+local add_desc = function(opts, desc)
+  local new_opts = opts
+  new_opts["desc"] = desc
+  return new_opts
+end
 
--- Normal --
--- increment  
-keymap("n", "<leader>=", "<C-a>", opts) -- incrememnt numbers up
-keymap("n", "<leader>-", "<C-x>", opts) -- incrememnt numbers down
+local opts = { noremap = true, silent = false }
+keymap("", "<Space>", "<Nop>", opts)
+
 
 -- delete single character without copying into register
 keymap("n", "x", '"_x', opts)
 
+-- get rid of highlight
+keymap("n", "<leader>h", '<cmd>nohlsearch<CR>', add_desc(opts, "Clear Highlight"))
+keymap("n", "<leader>w", '<cmd>w<CR>', add_desc(opts, "Save Buffer"))
+
 -- Navigate buffers
 keymap("n", "<S-l>", "<cmd>BufferLineCycleNext<cr>", opts)
 keymap("n", "<S-h>", "<cmd>BufferLineCyclePrev<cr>", opts)
-keymap("n", "<leader>c", ":Bdelete<CR>", opts)
 
 -- File Navigation
 -- NvimTree
