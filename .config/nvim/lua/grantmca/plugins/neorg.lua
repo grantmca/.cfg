@@ -2,7 +2,7 @@ return {
   "nvim-neorg/neorg",
   cmd = "Neorg",
   -- build = ":Neorg sync-parsers",
-  opts  = {
+  opts = {
     load = {
       ["core.defaults"] = {}, -- Loads default behaviour
       ["core.concealer"] = {}, -- Adds pretty icons to your documents
@@ -16,6 +16,6 @@ return {
         },
         default_workspace = "notes",
       },
-    }
-  }
+    },
+  },
 }
