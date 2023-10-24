@@ -12,7 +12,7 @@ return {
 
     telescope.setup({
       defaults = {
-        path_display = { "smart" },
+        path_display = { "absolute" },
         prompt_prefix = " ",
         selection_caret = " ",
         mappings = {

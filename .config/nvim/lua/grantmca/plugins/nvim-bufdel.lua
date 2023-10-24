@@ -7,5 +7,6 @@ return {
   },
   keys = {
     { "<leader>c", "<CMD>BufDel<CR>", { desc = "Close Buffer" } },
+    { "<leader><leader>ca", "<CMD>BufDelAll<CR>", { desc = "Close All Buffers" } },
   },
 }
