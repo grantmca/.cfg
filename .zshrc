@@ -46,7 +46,7 @@ zsh_add_file "zsh-intro"
 export EDITOR="nvim"
 export TERMINAL="kitty"
 export BROWSER="chrome"
-export TERM="xterm-256color"
+export TERM="tmux-256color"
 # FZF 
 #[ -f /usr/share/fzf/completion.zsh ] && source /usr/share/fzf/completion.zsh
 #[ -f /usr/share/fzf/key-bindings.zsh ] && source /usr/share/fzf/key-bindings.zsh

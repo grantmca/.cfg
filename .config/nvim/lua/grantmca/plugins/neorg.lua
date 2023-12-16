@@ -1,12 +1,16 @@
 return {
   "nvim-neorg/neorg",
   cmd = "Neorg",
-  -- build = ":Neorg sync-parsers",
+  dependencies = {
+  },
+  build = ":Neorg sync-parsers",
   opts = {
     load = {
-      ["core.defaults"] = {}, -- Loads default behaviour
-      ["core.concealer"] = {}, -- Adds pretty icons to your documents
-      -- ["core.ui"] = {}, -- Adds pretty calendar
+      ["core.defaults"] = {},
+      ["core.completion"] = { config = { engine = "nvim-cmp", name = "[Norg]" } },
+      ["core.integrations.nvim-cmp"] = {},
+      ["core.concealer"] = { config = { icon_preset = "diamond" } },
+      ["core.export"] = {},
       ["core.dirman"] = { -- Manages Neorg workspaces
         config = {
           default_workspace = "notes",
@@ -16,6 +20,7 @@ return {
         },
         default_workspace = "notes",
       },
+
     },
   },
 }

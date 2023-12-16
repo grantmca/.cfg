@@ -115,6 +115,31 @@ return {
       on_attach = on_attach,
     })
 
+    -- configure c++ server
+    lspconfig["clangd"].setup({
+      on_attach = function (client, bufnr)
+        client.server_capabilities.signatureHelpProvider = false
+        on_attach(client, bufnr)
+      end,
+      capabilities = capabilities,
+    })
+
+    -- configure c++ server
+    lspconfig["gopls"].setup({
+      on_attach = on_attach,
+      capabilities = capabilities,
+      cmd = { "gopls" },
+      filetypes = { "go", "gomod", "gowork", "gotmpl" },
+      root_dir = lspconfig.util.root_pattern("go.work", "go.mod", ".git"),
+      settings = {
+        completeUnimported = true,
+        usePlaceholders = true,
+        -- analyses = {
+        --   unusedparams = true,
+        -- },
+      },
+    })
+
     -- configure lua server (with special settings)
     lspconfig["lua_ls"].setup({
       capabilities = capabilities,
