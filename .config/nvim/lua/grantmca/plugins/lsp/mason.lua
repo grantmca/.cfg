@@ -36,7 +36,7 @@ return {
         "pyright",
         "solargraph",
         "bashls",
-        "cucumber_language_server",
+        -- "cucumber_language_server",
         "jsonls",
       },
       -- auto-install configured servers (with lspconfig)

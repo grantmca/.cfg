@@ -75,10 +75,10 @@ return {
     })
 
     -- configure cucumber server
-    lspconfig["cucumber_language_server"].setup({
-      capabilities = capabilities,
-      on_attach = on_attach,
-    })
+    -- lspconfig["cucumber_language_server"].setup({
+    --   capabilities = capabilities,
+    --   on_attach = on_attach,
+    -- })
 
     -- configure typescript server with plugin
     lspconfig["tsserver"].setup({
