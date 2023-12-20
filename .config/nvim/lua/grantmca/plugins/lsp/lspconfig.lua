@@ -5,8 +5,7 @@ return {
     "hrsh7th/cmp-nvim-lsp",
   },
   config = function ()
-    local lspconfig = require("lspconfig"); print(lspconfig.solargraph);
-
+    local lspconfig = require("lspconfig")
     -- import cmp-nvim-lsp plugin
     local cmp_nvim_lsp = require("cmp_nvim_lsp")
 
@@ -125,20 +124,20 @@ return {
     })
 
     -- configure c++ server
-    lspconfig["gopls"].setup({
-      on_attach = on_attach,
-      capabilities = capabilities,
-      cmd = { "gopls" },
-      filetypes = { "go", "gomod", "gowork", "gotmpl" },
-      root_dir = lspconfig.util.root_pattern("go.work", "go.mod", ".git"),
-      settings = {
-        completeUnimported = true,
-        usePlaceholders = true,
-        -- analyses = {
-        --   unusedparams = true,
-        -- },
-      },
-    })
+    -- lspconfig["gopls"].setup({
+    --   on_attach = on_attach,
+    --   capabilities = capabilities,
+    --   cmd = { "gopls" },
+    --   filetypes = { "go", "gomod", "gowork", "gotmpl" },
+    --   root_dir = lspconfig.util.root_pattern("go.work", "go.mod", ".git"),
+    --   settings = {
+    --     completeUnimported = true,
+    --     usePlaceholders = true,
+    --     -- analyses = {
+    --     --   unusedparams = true,
+    --     -- },
+    --   },
+    -- })
 
     -- configure lua server (with special settings)
     lspconfig["lua_ls"].setup({
