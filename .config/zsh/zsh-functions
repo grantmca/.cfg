@@ -40,14 +40,3 @@ function zsh_add_completion() {
   completion_file="$(basename "${completion_file_path}")"
   if [ "$2" = true ] && compinit "${completion_file:1}"
 }
-
-function mach_java_mode() {
-  #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
-  export SDKMAN_DIR="$HOME/.sdkman"
-  [[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
-}
-
-function work_ssh_add() {
-  eval "$(ssh-agent -s)"   # Initialize ssh-agent and set up necessary environment variables
-  ssh-add ~/.ssh/id_ed25519    # Add your specific key
-}

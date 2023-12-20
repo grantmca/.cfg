@@ -3,4 +3,3 @@ export PATH="$HOME/.local/bin":$PATH
 export PATH="$HOME/.gem/ruby/2.6.0/bin":$PATH
 export SOLARGRAPH_GLOBAL_CONFIG=$HOME/.config/solargraph/config.yml
 eval "$(rbenv init - zsh)"
-

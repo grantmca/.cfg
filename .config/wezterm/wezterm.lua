@@ -16,7 +16,7 @@ end
 config.color_scheme = 'Tokyo Night Storm'
 
 
-
+config.default_cursor_style = 'BlinkingBar'
 config.font = wezterm.font 'FiraCode Nerd Font'
 
 config.use_fancy_tab_bar = false
