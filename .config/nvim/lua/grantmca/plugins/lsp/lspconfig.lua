@@ -4,7 +4,7 @@ return {
   dependencies = {
     "hrsh7th/cmp-nvim-lsp",
   },
-  config = function ()
+  config = function()
     local lspconfig = require("lspconfig")
     -- import cmp-nvim-lsp plugin
     local cmp_nvim_lsp = require("cmp_nvim_lsp")
@@ -12,7 +12,6 @@ return {
 
 
     local on_attach = function(client, bufnr)
-
       local opts = { noremap = true, silent = true }
       local keymap = vim.api.nvim_buf_set_keymap
       opts.desc = "Go to declaration"
@@ -116,7 +115,7 @@ return {
 
     -- configure c++ server
     lspconfig["clangd"].setup({
-      on_attach = function (client, bufnr)
+      on_attach = function(client, bufnr)
         client.server_capabilities.signatureHelpProvider = false
         on_attach(client, bufnr)
       end,
@@ -159,7 +158,6 @@ return {
         },
       },
     })
-
   end,
 
 }
