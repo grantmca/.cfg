@@ -9,45 +9,8 @@ return {
       lsp = {
         -- `config` is passed to `vim.lsp.start_client(config)`
         config = {
-          cmd = { "zk", "lsp", '--log', '/tmp/zk-lsp.log'},
+          cmd = { "zk", "lsp"},
           name = "zk",
-          on_attach = function(client, bufnr)
-
-            local opts = { noremap = true, silent = true }
-            local keymap = vim.api.nvim_buf_set_keymap
-            opts.desc = "Go to declaration"
-            keymap(bufnr, "n", "gD", "<cmd>lua vim.lsp.buf.declaration()<CR>", opts)
-            opts.desc = "Show LSP definitions"
-            keymap(bufnr, "n", "gd", "<cmd>lua vim.lsp.buf.definition()<CR>", opts)
-            opts.desc = "Show documentation for what is under cursor"
-            keymap(bufnr, "n", "K", "<cmd>lua vim.lsp.buf.hover()<CR>", opts)
-            opts.desc = "Show LSP implementations"
-            keymap(bufnr, "n", "gI", "<cmd>lua vim.lsp.buf.implementation()<CR>", opts)
-            opts.desc = "Show LSP references"
-            keymap(bufnr, "n", "gr", "<cmd>lua vim.lsp.buf.references()<CR>", opts)
-            opts.desc = "Show LSP diagnostic"
-            keymap(bufnr, "n", "gl", "<cmd>lua vim.diagnostic.open_float()<CR>", opts)
-            opts.desc = "Show LSP format"
-            keymap(bufnr, "n", "<leader>lf", "<cmd>lua vim.lsp.buf.format{ async = true }<cr>", opts)
-            opts.desc = "Show LSP Info"
-            keymap(bufnr, "n", "<leader>li", "<cmd>LspInfo<cr>", opts)
-            opts.desc = "Show LSP Install Info"
-            keymap(bufnr, "n", "<leader>lI", "<cmd>LspInstallInfo<cr>", opts)
-            opts.desc = "Code Action"
-            keymap(bufnr, "n", "<leader>la", "<cmd>lua vim.lsp.buf.code_action()<cr>", opts)
-            opts.desc = "Next Diagnostic"
-            keymap(bufnr, "n", "<leader>lj", "<cmd>lua vim.diagnostic.goto_next({buffer=0})<cr>", opts)
-            opts.desc = "Previous Diagnostic"
-            keymap(bufnr, "n", "<leader>lk", "<cmd>lua vim.diagnostic.goto_prev({buffer=0})<cr>", opts)
-            opts.desc = "LSP Rename"
-            keymap(bufnr, "n", "<leader>lr", "<cmd>lua vim.lsp.buf.rename()<cr>", opts)
-            opts.desc = "LSP Singature Help"
-            keymap(bufnr, "n", "<leader>ls", "<cmd>lua vim.lsp.buf.signature_help()<CR>", opts)
-            opts.desc = "LSP Quickfix"
-            keymap(bufnr, "n", "<leader>lq", "<cmd>lua vim.diagnostic.setloclist()<CR>", opts)
-          end
-
-          -- etc, see `:h vim.lsp.start_client()`
         },
 
         -- automatically attach buffers in a zk notebook that match the given filetypes
@@ -57,5 +20,20 @@ return {
         },
       },
     })
+
+    local opts = { noremap=true, silent=false }
+    -- Create a new note after asking for its title.
+    vim.api.nvim_set_keymap("n", "<leader>zn", "<Cmd>ZkNew { title = vim.fn.input('Title: ') }<CR>", opts)
+
+    -- Open notes.
+    vim.api.nvim_set_keymap("n", "<leader>zo", "<Cmd>ZkNotes { sort = { 'modified' } }<CR>", opts)
+    -- Open notes associated with the selected tags.
+    vim.api.nvim_set_keymap("n", "<leader>zt", "<Cmd>ZkTags<CR>", opts)
+
+    -- Search for the notes matching a given query.
+    vim.api.nvim_set_keymap("n", "<leader>zf", "<Cmd>ZkNotes { sort = { 'modified' }, match = { vim.fn.input('Search: ') } }<CR>", opts)
+    -- Search for the notes matching the current visual selection.
+    vim.api.nvim_set_keymap("v", "<leader>zf", ":'<,'>ZkMatch<CR>", opts)
+
   end
 }
