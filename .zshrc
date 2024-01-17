@@ -42,9 +42,15 @@ zsh_add_completion "felixr/docker-zsh-completion"
 #Intro
 zsh_add_file "zsh-intro"
 
+_fix_cursor() {
+   echo -ne '\e[5 q'
+}
+
+precmd_functions+=(_fix_cursor)
+
 #Enviroment variables set everywhere
 export EDITOR="nvim"
-export TERMINAL="kitty"
+export TERMINAL="WezTerm"
 export BROWSER="chrome"
 export TERM="tmux-256color"
 # FZF 
