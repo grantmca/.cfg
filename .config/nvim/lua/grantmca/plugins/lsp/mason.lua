@@ -36,10 +36,10 @@ return {
         "pyright",
         "solargraph",
         "bashls",
-        -- "cucumber_language_server",
+        "cucumber_language_server",
         "jsonls",
         "clangd",
-        -- "gopls",
+        "gopls",
       },
       -- auto-install configured servers (with lspconfig)
       automatic_installation = true, -- not the same as ensure_installed

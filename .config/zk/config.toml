@@ -78,7 +78,7 @@ fzf-preview = "bat -p --color always {-1}"
 
 # NAMED FILTERS
 [filter]
-recents = "--sort created- --created-after 'last two weeks'"
+recents = "--sort created- --created-after 'last two months'"
 
 # COMMAND ALIASES
 [alias]
@@ -87,7 +87,7 @@ recents = "--sort created- --created-after 'last two weeks'"
 edlast = "zk edit --limit 1 --sort modified- $@"
 
 # Edit the notes selected interactively among the notes created the last two weeks.
-recent = "zk edit --sort created- --created-after 'last two weeks' --interactive"
+recent = "zk edit --sort created- --created-after 'last two months' --interactive"
 
 # Show a random note.
 lucky = "zk list --quiet --format full --sort random --limit 1"

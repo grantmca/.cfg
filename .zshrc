@@ -51,7 +51,7 @@ precmd_functions+=(_fix_cursor)
 #Enviroment variables set everywhere
 export EDITOR="nvim"
 export TERMINAL="WezTerm"
-export BROWSER="chrome"
+export BROWSER="firefox"
 export TERM="tmux-256color"
 # FZF 
 #[ -f /usr/share/fzf/completion.zsh ] && source /usr/share/fzf/completion.zsh
