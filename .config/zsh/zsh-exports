@@ -3,7 +3,12 @@ export PATH="/opt/homebrew/sbin:$PATH"
 export PATH="$HOME/.local/bin":$PATH
 export PATH="$HOME/.npm-global/bin":$PATH
 export PATH="$HOME/.gem/ruby/2.6.0/bin":$PATH
+export PATH="/opt/homebrew/opt/postgresql@15/bin:$PATH"
 export PATH="$HOME/Library/Python/3.9/bin":$PATH
+export PYENV_ROOT="$HOME/.pyenv"
 export ZK_NOTEBOOK_DIR="$HOME/notebook"
 eval "$(rbenv init - zsh)"
 eval "$(frum init)"
+command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init -)"
+export PATH="/opt/homebrew/opt/curl/bin:$PATH"

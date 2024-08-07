@@ -39,6 +39,7 @@ zsh_add_plugin "zsh-users/zsh-autosuggestions"
 zsh_add_plugin "zsh-users/zsh-syntax-highlighting"
 zsh_add_plugin "hlissner/zsh-autopair"
 zsh_add_completion "felixr/docker-zsh-completion"
+
 #Intro
 zsh_add_file "zsh-intro"
 
@@ -62,3 +63,8 @@ export TERM="tmux-256color"
 [ -f $ZDOTDIR/completion/_fnm ] && fpath+="$ZDOTDIR/completion/"
 # export FZF_DEFAULT_COMMAND='rg --hidden -l ""'
 compinit
+
+# Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
+export PATH="$PATH:$HOME/.rvm/bin"
+eval 
+HI_AC_ZSH_SETUP_PATH=/Users/DMcAllister/Library/Caches/@eab-hip/cli/autocomplete/zsh_setup && test -f $HI_AC_ZSH_SETUP_PATH && source $HI_AC_ZSH_SETUP_PATH; # hi autocomplete setup
