@@ -83,6 +83,11 @@ recents = "--sort created- --created-after 'last two months'"
 # COMMAND ALIASES
 [alias]
 
+# Go to index
+index = "zk edit --limit 1 --match=index --tag=home"
+i = "zk edit --limit 1 --match=index --tag=home"
+
+wi = "zk edit --limit 1 --match='work index'"
 # Edit the last modified note.
 edlast = "zk edit --limit 1 --sort modified- $@"
 
