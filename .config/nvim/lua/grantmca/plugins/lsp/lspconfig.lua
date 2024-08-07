@@ -147,6 +147,7 @@ return {
         client.server_capabilities.signatureHelpProvider = false
         on_attach(client, bufnr)
       end,
+      cmd = {'/usr/bin/clangd'},
       capabilities = capabilities,
     })
 
@@ -154,7 +155,7 @@ return {
     lspconfig['gopls'].setup({
       on_attach = on_attach,
       capabilities = capabilities,
-      cmd = { 'gopls' },
+      cmd = { '/usr/local/bin/gopls' },
       filetypes = { 'go', 'gomod', 'gowork', 'gotmpl' },
       root_dir = lspconfig.util.root_pattern('go.work', 'go.mod', '.git'),
       settings = {
