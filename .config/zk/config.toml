@@ -84,7 +84,7 @@ recents = "--sort created- --created-after 'last two months'"
 [alias]
 
 # Go to index
-index = "zk edit --limit 1 --match=index --tag=home"
+
 i = "zk edit --limit 1 --match=index --tag=home"
 
 wi = "zk edit --limit 1 --match='work index'"
